@@ -1,23 +1,68 @@
-# Library vs Framework  
-    Library: Lib gives us free hold like naming convention, folder structure and it hold very minimal things that makes him lighter as compared to framework.
-    Framework: It has set of rules and we have to follow them and it gives us all kinds of utility like router and other package which makes them heavy.
+Important Notes
 
-# way to create react app
-    npx : node package executor
-    create-react-app: (React way)
-        - It's a bulky utility of software that helps us to create react app
+# React is a light weight library that hold only react and react dom (for web) as a dependency with other testing packages.
 
-    npx create-react-app <<appName>>: It provide large bundle as create-react-app is a bulky utility which contain lots of files that generally not needed.It takes lot of time for installation.It documentation they have not mentioned but this is older approach that we need to know.
+# Library: 
+A library is a collection of pre-written code that provides specific functionality, which you can call upon in your own application. Libraries offer tools to help with particular tasks but do not impose a particular structure on your application.It contains minimul things that make it ligher
+
+# Framework:
+A framework is a comprehensive set of tools and conventions for building applications. It often dictates the overall structure and design of your codebase, providing a skeleton around which you build your application.It is just like
+a suite having routes,zone etc them makes them larger.
+
+# Multiple ways to create react application
+
+- npx create-react-app <<name>>: This is a react utility that support to create react app but it is taking much time
+to create application with large bundle size, it contain those files which has no use and in document they havn't mention to use this way
+
+command to create app: npm create-react-app <<name>>
+
+    - index.js is injected by react scripts internally and when you inspect the page you will see bundle.js injected.
+
+- vite: It is a module bundler and this is one of faster utility to create react app and it contains only minimul
+things like react + reactDom only that makes its bundle small in size and make them faster.
+
+    - main.jsx: It is loaded by index.js as a module
+
+command to create app: npm create vite@latest
+
+- Parcel
+
+# Virtual dom
+
+React has its own virtual dom and it compares with the virtual with main dom and put the updated changes in real dom.
+
+# How React convert the JSX into the tree structure that react understand.
+
+- React understand the object/tree structure
+
+     when you return jsx then then it internally converted into that react understand
+        const ReactElement = {
+            type:'a',
+            children:'click to visit google',
+            props:{
+                href:'https://www.google.com',
+                target:'_blank'
+            }
+        } 
     
-    vite (LightBundler): Recommended (faster way).It includes minimul files that is necessary for react project at initial stage
-    
-    parcel: Recommended (faster way).
+    but if you directly put ReactElement as an evaluation expression then react won't understand so we have to use
 
-# react has its own virtual dom which compare the changes with main dom and reflect the changed portion in main dom.
+    React.createElement(
+      'a',
+      {href:'https://www.google.com',target:'_blank'},
+      'Click to visit Google Site'
+    )
 
-# 01basicreact: 
-    As you can see in index.html we are not injecting any scripts then how index.js is executing so answer is "react-scripts" is injecting behind the scene
 
-# Vite directly load main.jsx in index.html as a module.
 
-# Recommended: File and Component name to be used UpperCased but some lib like vite forced to use .jsx extension but some not like in react create-react-app
+
+
+
+
+
+
+
+
+
+
+

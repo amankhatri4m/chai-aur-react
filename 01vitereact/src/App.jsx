@@ -1,6 +1,9 @@
+import Chai from "./Chai";
 function App() {
   return (
-    <h1>Chai aur React with Vite</h1>
+    // using Chai component which is treating a child of App Component
+    // In vite: Component name should start with Upper case and extension should be .jsx
+   <Chai/>
   )
 }
 

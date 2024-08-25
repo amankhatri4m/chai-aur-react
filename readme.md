@@ -53,7 +53,19 @@ React has its own virtual dom and it compares with the virtual with main dom and
       'Click to visit Google Site'
     )
 
+# update state in UI/DOM
 
+    React say, if you wanted to change the state in DOM at multiple places then you have to follow the instruction
+    as suggested by react.
+
+
+    const [counter,setCounter] = useState(0);
+
+    addValue(){
+        setCounter(counter + 1); // this will tell react to propagate the update value in DOM
+    }
+
+    Note: Handle state at component level. We have to rely on useState hook.
 
 
 

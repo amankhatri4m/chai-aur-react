@@ -9,7 +9,23 @@ function App() {
 
   const addValue = ()=>{
     if(counter <=20){
-      setCounter(counter + 1);
+      // setCounter(counter + 1);
+      // setCounter(counter + 1);
+      // setCounter(counter + 1);
+      // setCounter(counter + 1);
+
+      // Above code will print same value because fibre create the batch and if the value is same then it will do 
+      //nothing and give the same value
+
+      //but if we want previous value to update 
+      setCounter(prevCounter => prevCounter + 1);
+      setCounter(prevCounter => prevCounter + 1);
+      setCounter(prevCounter => prevCounter + 1);
+      setCounter(prevCounter => prevCounter + 1);
+
+      // above one give if counter is 15 then it gives output to 19 because it didn't create batch it just execute
+      // one by one as promise chaining did.
+
     }
   }
 

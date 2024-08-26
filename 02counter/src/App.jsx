@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
+  // Once it initialize, it doesn't initialize again.
   let [counter,setCounter] = useState(0);
 
   const addValue = ()=>{
